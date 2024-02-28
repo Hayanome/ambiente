@@ -228,3 +228,107 @@
     transform: rotate(0deg);
   }
 }
+.quizInput {
+  width: 300px; /* Ancho del cuadro de texto */
+  height: 40px; /* Altura del cuadro de texto */
+  border: 2px solid #bdbdbd; /* Borde del cuadro de texto */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  transition: border-color 0.3s; /* Transición suave para el cambio de color de borde */
+}
+
+.quizInput:focus {
+  outline: none; /* Quita el contorno al enfocar */
+  border-color: #2196f3; /* Cambia el color del borde al enfocar */
+}
+
+.quizInput.incorrect {
+  border-color: #ff5722; /* Cambia el color del borde a rojo si la respuesta es incorrecta */
+}
+.quizButton {
+  width: (20px); /* Ancho del botón */
+  height: 60px; /* Altura del botón */
+  margin-left: 4px;
+  background-color: #2196f3; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none; /* Quita el borde del botón */
+  border-radius: 8px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+  max-width: calc(100% - 45px); /* Ancho máximo del botón para que no supere los 45px */
+}
+
+.quizButton:hover {
+  background-color: #0d47a1; /* Cambia el color de fondo al pasar el cursor sobre el botón */
+}
+
+.quizButton:active {
+  background-color: #1565c0; /* Cambia el color de fondo al hacer clic en el botón */
+}
+.googleButton {
+  background-color: #fff; /* Cambia el color de fondo del botón a blanco */
+  color: #4285f4; /* Color del texto del botón */
+  border: 1px solid #4285f4; /* Agrega un borde sólido */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+
+  display: flex; /* Utiliza flexbox para alinear elementos */
+  align-items: center; /* Alinea elementos verticalmente */
+}
+
+.googleButton:hover {
+  background-color: #f1f3f4; /* Cambia el color de fondo al pasar el cursor sobre el botón */
+}
+
+.googleIcon {
+  width: 30px; /* Ancho de la imagen */
+  height: auto; /* Altura automática de la imagen */
+  margin-right: 10px; /* Espaciado a la derecha */
+}
+
+.googleText {
+  font-size: 16px; /* Tamaño de fuente */
+}
+
+
+.button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333; /* Color del texto del botón */
+}
+
+.email {
+  margin: 0;
+  padding: 0;
+  color: #1565c0;
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+.message {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(41, 167, 6, 0.873);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  height: 60px;
+  width: 200px;
+  display: flex; /* Utiliza flexbox */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  transition: bottom 0.3s ease; /* Transición suave para el movimiento del mensaje */
+}
+
+
+.container:hover .message {
+  bottom: 0; /* Muestra el mensaje al pasar el ratón sobre el contenedor */
+}
