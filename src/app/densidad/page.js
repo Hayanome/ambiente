@@ -67,17 +67,12 @@ export default function Densidad() {
         }, 3000);
     };
     return (
-        <main>
+        <main className="densidad">
+            <center>
+                <h1 className="densidad-titulo">Densidad</h1>
+            </center>
+
             <section className="video-introduccion">
-                <img
-                    src="https://w7.pngwing.com/pngs/899/571/png-transparent-video-cameras-computer-icons-drawing-camera-angle-camera-icon-film.png" // Ruta relativa a la carpeta `public`
-                    alt="Descripción de la imagen"
-                    style={{ width: "500px", height: "300px" }} // Estilo para controlar las dimensiones de la imagen
-                />
-                <p>video pendiente donde explico todo el modulo</p>
-            </section>
-            <section className="densidad-inicio">
-                <h1 className="densidad-titulo">La Densidad</h1>
                 <p className="densidad-inicio-descripcion">
                     Felicitaciones por llegar al último nivel de nuestro módulo,
                     en el vamos a explorar el concepto densidad, su relación con
@@ -94,20 +89,32 @@ export default function Densidad() {
                     <br />
                     Acompáñame en este proceso de aprendizaje.
                 </p>
-            </section>
-            <section className="densidad-explicacion">
-                <h2>¿Qué es la densidad?</h2>
-                <div className="densidad-explicacion-video">
+                <div className="video-introduccion-cuadros">
                     <iframe
+                        className="video-introduccion-cuadro"
                         width="560"
                         height="315"
-                        src="https://www.youtube.com/embed/eCwlcdSY2DU?si=U8UJ1NgcG0fvoTCv"
+                        src="https://www.youtube.com/embed/qVfeNhas6i0?si=zLD0-VoBTkcHNNuY"
                         title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen
                     ></iframe>
                 </div>
+            </section>
+            <section className="densidad-inicio"></section>
+            <section className="densidad-explicacion">
+                <center>
+                    <h2>¿Qué es la densidad?</h2>
+                    <iframe
+                        className="densidad-video"
+                        src="https://www.youtube.com/embed/eCwlcdSY2DU?si=U8UJ1NgcG0fvoTCv"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                    ></iframe>
+                </center>
                 {/* <div>
           <label htmlFor="masaInput">Masa (kg):</label>
           <input
@@ -225,21 +232,26 @@ export default function Densidad() {
                 <div className="laboratorio-video">
                     <h3>Guia de uso de la simulación</h3>
                     <p>observa el siguiente video.</p>
-                    <img
-                        src="https://w7.pngwing.com/pngs/899/571/png-transparent-video-cameras-computer-icons-drawing-camera-angle-camera-icon-film.png" // Ruta relativa a la carpeta `public`
-                        alt="Descripción de la imagen"
-                        style={{ width: "500px", height: "300px" }} // Estilo para controlar las dimensiones de la imagen
-                    />
-                    <p>video pendiente donde explico la simulacion</p>
-                </div>
-                <div className="simulacion-densidad">
                     <iframe
-                        src="https://phet.colorado.edu/sims/html/density/latest/density_es.html"
-                        width="80%"
-                        height="600"
+                        className="laboratorio-video-explicacion"
+                        src="https://www.youtube.com/embed/uVI5kiWw20E?si=qI7B-DvHMtOOSf0I"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen
                     ></iframe>
                 </div>
+            </section>
+            <section className="simulacion-densidad">
+                <center>
+                    <h2>Simulador Densidad</h2>
+                    <iframe
+                        src="https://phet.colorado.edu/sims/html/density/latest/density_es.html"
+                        width="90%"
+                        height="900"
+                        allowfullscreen
+                    ></iframe>
+                </center>
             </section>
         </main>
     );

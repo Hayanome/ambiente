@@ -40,7 +40,7 @@ const Quiz = ({
                     alt="Imagen de pregunta"
                 />
             )}
-            <p>{question}</p>
+            <p className="question">{question}</p>
             <form className="quizInput" onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -57,7 +57,9 @@ const Quiz = ({
             </form>
             {showFeedback && (
                 <div>
-                    <p>{isCorrect ? feedbackCorrect : feedbackIncorrect}</p>
+                    <p className="question">
+                        {isCorrect ? feedbackCorrect : feedbackIncorrect}
+                    </p>
                 </div>
             )}
         </div>

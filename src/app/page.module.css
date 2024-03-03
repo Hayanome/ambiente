@@ -332,3 +332,6 @@
 .container:hover .message {
   bottom: 0; /* Muestra el mensaje al pasar el ratón sobre el contenedor */
 }
+.navbar-end .navbar-item {
+  color: white;
+}
