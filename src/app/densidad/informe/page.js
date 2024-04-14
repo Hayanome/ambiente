@@ -3,7 +3,7 @@
 import { useState } from "react";
 import styles from "../../page.module.css";
 
-const informe = () => {
+const Informe = () => {
     const [copied, setCopied] = useState(false);
 
     const copyToClipboard = () => {
@@ -98,4 +98,4 @@ const informe = () => {
     );
 };
 
-export default informe;
+export default Informe;

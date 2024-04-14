@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const primeraEntrega = () => {
+const PrimeraEntrega = () => {
     const [datos, setDatos] = useState([
         {
             id: 1,
@@ -86,11 +86,11 @@ const primeraEntrega = () => {
                 <strong>Fecha limite de entrega: XXXXXXXX</strong>
             </p>
             <p className="informe-texto">
-                A partir de la parte 1 de la simulacion, complete el cuadro de
-                la parte de abajo indicando la masa, el volumen y la densidad de
-                cada uno de los objetos que se encuentran, recuerde que puede
-                cambiar entre ellos, en la parte superior derecha, junto a la A
-                en color rojo.
+                A partir del apartado introduccion de la simulacion, complete el
+                cuadro de la parte de abajo indicando la masa, el volumen y la
+                densidad de cada uno de los objetos que se encuentran, recuerde
+                que puede cambiar entre ellos, en la parte superior derecha,
+                junto a la A en color rojo.
             </p>
             <div>
                 <table>
@@ -172,4 +172,4 @@ const primeraEntrega = () => {
     );
 };
 
-export default primeraEntrega;
+export default PrimeraEntrega;
