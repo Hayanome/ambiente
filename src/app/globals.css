@@ -1,10 +1,35 @@
+body{
+  background-color: white;
+  font-family: 'Helvetica', sans-serif;
+}
+main{
+  position: absolute;
+  top: 120px;
+}
+.densidad{
+  margin: 0 3rem 0 3rem;
+  width: 1200px;
+  
+}
+h1{
+  font-size: 60px;
+}
+h2{
+  font-size: 40px;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
 /*------------------------------------------------------barra de navegacion-------------------------------------------------*/
 .navbar {
+  font-size:13px;
   background-color: #0d324d; /* Azul oscuro */
   color: white;
   padding: 10px;
+  padding-bottom: 20px;
   display: flex;
-  justify-content: space-between;
+  text-decoration: none;
+  position: relative; /* Agrega posición relativa para el posicionamiento del submenú */
 }
 
 .navbar-brand {
@@ -25,46 +50,116 @@
 
 .navbar-item {
   color: white;
-  margin-left: 20px;
+  margin-left: 10px;
   cursor: pointer;
+  padding: 1rem;
+  position: relative; /* Agrega posición relativa para el submenú */
+}
+.navbar-item:hover{
+  transition: background-color 0.3s ease;
+  background-color: #0b283d;
+}
+.active {
+  padding: auto;
+  background-color: #155380; /* Cambia el color de fondo a rojo cuando el submenú está abierto */
 }
 
-.navbar-item:hover {
-  text-decoration: underline;
+.active-informe {
+  background-color: rgb(172, 82, 34);
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar-end {
-    justify-content: center;
-    margin-top: 1rem;
-  }
-
-  .navbar-item {
-    margin: 0 0.5rem;
-  }
+.active-informe:hover {
+  background-color: rgb(130, 61, 25);
 }
-/*------------------------------------------------------pagina densidad -------------------------------------------------*/
-.video-introduccion-cuadros{
-  border-left: 2px solid black;
-  padding-left: 7rem;
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Asegura que la barra esté sobre otros elementos */
+}
+
+
+/* Estilos para el submenú */
+.submenu {
+  position: absolute;
+  top: calc(30%); /* Coloca el submenú justo debajo del elemento padre */
+  left: 200px;
+  padding: 0px 5px;
+  margin-top: 0;
+  z-index: 1000;
+  width: 480px; /* Ancho del submenú */
+  display: flex; /* Cambia a display flex */
+  flex-direction: row; /* Orientación de filas */
+  justify-content: space-between; /* Alinea los elementos en la fila */
+  align-items: center; /* Centra verticalmente los elementos */
+  background-color: #155380;
+  width: 550px;
+}
+.submenu:hover {
+  background-color: #103d5e;
+}
+.submenu-entrega{
+  position: absolute;
+  display: flex; /* Cambia a display flex */
+  flex-direction: row; /* Orientación de filas */
+  top: calc(83%);
+  left: -130px;
+  width: 400px;
+  justify-content: space-between;
+  background-color: rgb(172, 82, 34);
+  padding: 5px 5px 5px 5px;
+}
+.submenu-entrega:hover {
+  background-color: rgb(130, 61, 25);
+}
+.submenu-item {
+  color: #fff; /* Texto blanco */
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.submenu-item:hover {
+}
+
+.navbar-item:hover .submenu {
+  
+}
+
+
+
+
+/*------------------------------------------------------pagina densidad introduccion -------------------------------------------------*/
+.video-introduccion{
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:row;
 }
 .video-introduccion-cuadro{
   padding-top: 2rem;
-  width: 800px; 
-  height: 600px;
+  width: 550px; 
+  height: 309.9px;
+  padding-left: 3rem;
 
 }
 
+.densidad-inicio-descripcion{
+  font-size: x-large;
+  padding-top: 2rem;
+  width: 600px;
+  border-right: 2px solid black;
+}
+/*------------------------------------------------------pagina densidad -------------------------------------------------*/
 .densidad-video{
-  width: 1000px;
-  height: 600px;
+  margin-left: 2rem;
+  width: 1100px;
+  height: 618.8px;
 }
-
+/*------------------------------------------------------pagina ejercicios -------------------------------------------------*/
 .quiz-card{
 width: 500px;
 border: 2px solid #000; /* Borde de 2px de ancho, sólido y de color negro */
@@ -85,169 +180,352 @@ display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 }
-.densidad{
-  margin: 3rem;
-  
-}
-body{
-  background-color: #c6ebd2;
-}
-.video-introduccion{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-.densidad-inicio-descripcion{
-  font-size: x-large;
-  padding-right: 1rem;
-  padding-top: 2rem;
-  width: 400px;
-}
-h1{
-  font-size: 60px;
-}
-h2{
-  font-size: 40px;
-  text-align: center;
-}
 .ejercicio-descripcion{
   font-size: xx-large;
 }
 .question{
   font-size: 20px;
 }
-.laboratorio{
+/*------------------------------------------------------pagina informe -------------------------------------------------*/
+.laboratorio-introduccion{
   font-size: x-large;
   display: flex;
+  flex-direction: row;
 }
 .laboratorio-video{
   margin: 1rem;
   padding-top: 55px;
-  border-left: 2px solid black;
   padding-left: 2rem;
 }
+.laboratorio-video iframe {
+  width: 500px;
+  height: 300px;
+  margin-right: 1rem;
+  border-right: 2px;
+}
+
+.informe-descripcion{
+  margin-top: 3rem;
+}
+/*------------------------------------------------------pagina simulacion -------------------------------------------------*/
+.simulador-titulo{
+  padding-bottom: 1rem;
+}
+
 .simulacion-densidad{
+  margin-left: 0;
+  width: 1200px;
   margin-top: 2rem;
 }
-
-.laboratorio-video iframe {
-  width: 800px;
-  height: 500px;
+/* ------------------------------pagina informe 1----------------------*/
+.informe1-titulo{
+  padding-bottom: 1rem;
 }
 
-/* Estilos para dispositivos móviles */
-@media only screen and (max-width: 600px) {
-  /* Añade estilos adicionales para dispositivos móviles aquí */
-  .video-introduccion-cuadros{
-    border-left: none;
-    padding-top: 0;
-    
-  }
-  .video-introduccion-cuadro{
-    padding-top: 0;
-   
-  }
-  .video-introduccion{
-    margin-top: 0;
-    padding-top: 0rem;
-    margin-left: 0rem;
-    padding-left: 0rem;
-  }
-
-  .densidad {
-      margin: 10px;
-      margin-top: 0;
-      padding-top: 0;
-  }
-
-  .densidad-titulo {
-      font-size: 40px;
-  }
-
-  .densidad-inicio-descripcion {
-      font-size: 22px;
-      margin-top: 0;
-      padding-top: 0;
-      padding-right: 0;
-  }
-
-  .video-container {
-      text-align: center;
-  }
-  .video-introduccion-cuadro{
-    display: inline-block;
-    width: 450px;
-    height: 300px;
-    margin-left: 0;
-    padding: 0rem;
-  }
-  .video-introduccion-cuadros{
-    padding-left: 0;
-  }
-  .video-icon {
-      width: 100px;
-      height: 100px;
-  }
-  
-
-  .densidad-video {
-      width: 100%;
-      height: 400px;
-  }
-
-  .ejercicios {
-      padding: 20px;
-      padding-bottom: 0;
-  }
-
-  .ejercicio-descripcion {
-      font-size: 14px;
-  }
-
-  .ejercicios-pregunta {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-  }
-
-  .ejercicio-pregunta-ficha {
-      margin-bottom: 20px;
-  }
-
-  .laboratorio {
-      padding: 20px;
-      flex-wrap: wrap;
-      padding-top: 0;
-      padding-bottom: 0;
-  }
-
-  .laboratorio h2{
-    margin-top: 1rem;
-  }
-
-  .laboratorio-introduccion,
-  .laboratorio-video {
-      margin-bottom: 20px;
-  }
-
-  .laboratorio-video{
-    border-left: none;
-    margin-left: 0;
-    padding-left: 0;
-    padding-top: 0;
-    margin-top: 0;
-  }
-
-  .laboratorio-video iframe {
-      width: 500px;
-      height: 350px;
-  }
-
-  .simulacion-densidad{
-    margin-top: 0;
-  }
-  .simulacion-densidad iframe {
-      width: 100%;
-      height: 500px;
-  }
+.informe-texto{
+  padding-bottom: 2rem;
+  font-size:large;
 }
+
+.table-container {
+  margin: 20px;
+}
+
+table {
+  width: 92%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #e9e9e9;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+select {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #2384c9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* normalizar css */
+Aquí tienes un ejemplo básico de cómo podrías normalizar tu CSS utilizando Normalize.css:
+
+```css
+/* normalize.css */
+
+/**
+ * 1. Corrige el 'box sizing' en todos los elementos.
+ * 2. Corrige el padding y el border sizing en Firefox.
+ * 3. Corrige la altura inconsistente del <progress> en Firefox.
+ * 4. Elimina los estilos del 'display' para los elementos ocultos.
+ * 5. Corrige el 'cursor' para los botones y elementos que no son enlaces.
+ * 6. Ajusta la opacidad en los elementos deshabilitados.
+ * 7. Corrige el 'outline' inconsistente y poco claro en algunos navegadores.
+ * 8. Establece la visibilidad como 'visible' para los elementos de tipo <template>.
+ * 9. Corrige la propagación del estilo 'inherit' para <fieldset>.
+ * 10. Corrige el tamaño y el 'baseline' de los elementos en los navegadores actuales.
+ * 11. Corrige el estilo 'textarea' en Safari.
+ * 12. Corrige la estabilidad visual de los pseudo-elementos después de ocultarlos en IE 11.
+ * 13. Normaliza los estilos de listas.
+ * 14. Hace que los elementos <hr> sean visibles en IE.
+ * 15. Corrige las fuentes de tamaño anormal en Chrome y Safari.
+ */
+
+/* Elementos estructurales */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%; /* 1 */
+}
+
+body {
+  margin: 0;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+figcaption,
+figure,
+main { /* Ajuste de visualización para algunos elementos para garantizar que se muestren correctamente */
+  display: block;
+}
+
+/* Grupos de contenido */
+abbr[title] {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+dfn {
+  font-style: italic;
+}
+
+/* Elementos de texto */
+a {
+  background-color: transparent;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Elementos de tablas */
+caption {
+  caption-side: bottom;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/* Evita los márgenes superiores e inferiores en los elementos de bloque */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+hr,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Redefine la visualización para los elementos de estilo de contenido */
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ajuste del tamaño del contenido */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Modificación del comportamiento del 'hr' */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/* Corrección del comportamiento de las imágenes en los navegadores antiguos */
+img {
+  border-style: none;
+}
+
+/* Reajuste del tamaño del 'input', 'select', 'textarea' */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/* Restaurar el paso del punto al omitir el contenido de las listas numeradas */
+button,
+input { /* Reajustar 'input' se establece de manera similar */
+  overflow: visible;
+}
+
+/* Reajustar el estilo del elemento 'input' para Safari */
+button,
+input,
+select,
+textarea {
+  text-rendering: auto; /* 1 */
+  color: inherit; /* 2 */
+}
+
+/* Reajustar el estilo del elemento 'input' para Firefox */
+button {
+  appearance: button; /* 1 */
+  outline: none; /* 2 */
+}
+
+/* Corrección de la estabilidad de la fuente para Safari (OS X y iOS) */
+select {
+  text-transform: none;
+}
+
+/* Restablecer el estilo de la fuente para el elemento 'textarea' */
+textarea {
+  overflow: auto;
+}
+
+/* Edge no puede ocultar el estilo del botón en IE 11 */
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* Restablecer la alineación del texto y la altura del botón */
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Alineación del borde y la línea del botón */
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
+  text-align: inherit;
+  border-color: inherit;
+  border-width: inherit;
+  border-style: inherit;
+  border-radius: inherit;
+}
+
+/* Botones y enlaces */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* 1 */
+}
+
+/* Enlaces personalizados */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Corrección del comportamiento del 'details' */
+details {
+  display: block;
+}
+
