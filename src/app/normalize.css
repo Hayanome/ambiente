@@ -1,0 +1,242 @@
+/* normalize.css */
+
+/**
+ * 1. Corrige el 'box sizing' en todos los elementos.
+ * 2. Corrige el padding y el border sizing en Firefox.
+ * 3. Corrige la altura inconsistente del <progress> en Firefox.
+ * 4. Elimina los estilos del 'display' para los elementos ocultos.
+ * 5. Corrige el 'cursor' para los botones y elementos que no son enlaces.
+ * 6. Ajusta la opacidad en los elementos deshabilitados.
+ * 7. Corrige el 'outline' inconsistente y poco claro en algunos navegadores.
+ * 8. Establece la visibilidad como 'visible' para los elementos de tipo <template>.
+ * 9. Corrige la propagación del estilo 'inherit' para <fieldset>.
+ * 10. Corrige el tamaño y el 'baseline' de los elementos en los navegadores actuales.
+ * 11. Corrige el estilo 'textarea' en Safari.
+ * 12. Corrige la estabilidad visual de los pseudo-elementos después de ocultarlos en IE 11.
+ * 13. Normaliza los estilos de listas.
+ * 14. Hace que los elementos <hr> sean visibles en IE.
+ * 15. Corrige las fuentes de tamaño anormal en Chrome y Safari.
+ */
+
+/* Elementos estructurales */
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%; /* 1 */
+  }
+  
+  body {
+    margin: 0;
+  }
+  
+  article,
+  aside,
+  footer,
+  header,
+  nav,
+  section {
+    display: block;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+  
+  figcaption,
+  figure,
+  main { /* Ajuste de visualización para algunos elementos para garantizar que se muestren correctamente */
+    display: block;
+  }
+  
+  /* Grupos de contenido */
+  abbr[title] {
+    text-decoration: underline;
+    text-decoration: underline dotted;
+  }
+  
+  b,
+  strong {
+    font-weight: bolder;
+  }
+  
+  dfn {
+    font-style: italic;
+  }
+  
+  /* Elementos de texto */
+  a {
+    background-color: transparent;
+  }
+  
+  b,
+  strong {
+    font-weight: bolder;
+  }
+  
+  small {
+    font-size: 80%;
+  }
+  
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  
+  sub {
+    bottom: -0.25em;
+  }
+  
+  sup {
+    top: -0.5em;
+  }
+  
+  /* Elementos de tablas */
+  caption {
+    caption-side: bottom;
+  }
+  
+  table {
+    border-collapse: collapse;
+  }
+  
+  td,
+  th {
+    padding: 0;
+  }
+  
+  /* Evita los márgenes superiores e inferiores en los elementos de bloque */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  figure,
+  hr,
+  dl,
+  dd {
+    margin: 0;
+  }
+  
+  /* Redefine la visualización para los elementos de estilo de contenido */
+  ol,
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Ajuste del tamaño del contenido */
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+  
+  /* Modificación del comportamiento del 'hr' */
+  hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+  }
+  
+  /* Corrección del comportamiento de las imágenes en los navegadores antiguos */
+  img {
+    border-style: none;
+  }
+  
+  /* Reajuste del tamaño del 'input', 'select', 'textarea' */
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font: inherit; /* 1 */
+    margin: 0; /* 2 */
+  }
+  
+  /* Restaurar el paso del punto al omitir el contenido de las listas numeradas */
+  button,
+  input { /* Reajustar 'input' se establece de manera similar */
+    overflow: visible;
+  }
+  
+  /* Reajustar el estilo del elemento 'input' para Safari */
+  button,
+  input,
+  select,
+  textarea {
+    text-rendering: auto; /* 1 */
+    color: inherit; /* 2 */
+  }
+  
+  /* Reajustar el estilo del elemento 'input' para Firefox */
+  button {
+    appearance: button; /* 1 */
+    outline: none; /* 2 */
+  }
+  
+  /* Corrección de la estabilidad de la fuente para Safari (OS X y iOS) */
+  select {
+    text-transform: none;
+  }
+  
+  /* Restablecer el estilo de la fuente para el elemento 'textarea' */
+  textarea {
+    overflow: auto;
+  }
+  
+  /* Edge no puede ocultar el estilo del botón en IE 11 */
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner,
+  button::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+  
+  /* Restablecer la alineación del texto y la altura del botón */
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner,
+  button::-moz-focus-inner {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  /* Alineación del borde y la línea del botón */
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner,
+  button::-moz-focus-inner {
+    text-align: inherit;
+    border-color: inherit;
+    border-width: inherit;
+    border-style: inherit;
+    border-radius: inherit;
+  }
+  
+  /* Botones y enlaces */
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    -webkit-appearance: button; /* 1 */
+  }
+  
+  /* Enlaces personalizados */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Corrección del comportamiento del 'details' */
+  details {
+    display: block;
+  }
+  

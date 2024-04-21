@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "../page.module.css";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
 const Quiz = ({
     questionNumber,
@@ -15,7 +17,10 @@ const Quiz = ({
     const [showFeedback, setShowFeedback] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
     const [isIncorrect, setIsIncorrect] = useState(false);
-
+    const handleChange = (e) => {
+        setUserAnswer(e.target.value);
+        setIsIncorrect(false); // Reiniciar el estado de incorrecto cuando cambia la respuesta
+    };
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -42,18 +47,22 @@ const Quiz = ({
             )}
             <p className="question">{question}</p>
             <form className="quizInput" onSubmit={handleSubmit}>
-                <input
-                    type="text"
+                <TextField
+                    id="outlined-basic"
                     value={userAnswer}
-                    onChange={(e) => setUserAnswer(e.target.value)}
+                    onChange={handleChange}
                     placeholder="Ingrese su respuesta aquí"
-                    className={`${styles.quizInput} ${
-                        isIncorrect ? styles.incorrect : ""
-                    }`}
+                    variant="outlined" // Puedes cambiar el estilo del TextField aquí
+                    error={isIncorrect} // Marcar como error si es incorrecto
+                    helperText={isIncorrect ? "Respuesta incorrecta" : ""} // Mostrar mensaje de error
                 />
-                <button type="submit" className={styles.quizButton}>
+                <Button
+                    variant="contained"
+                    type="submit"
+                    className={styles.quizButton}
+                >
                     Enviar respuesta
-                </button>
+                </Button>
             </form>
             {showFeedback && (
                 <div>

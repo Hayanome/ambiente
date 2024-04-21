@@ -91,6 +91,11 @@ function Navbar() {
                                         <center>Ejercicios de Repaso</center>
                                     </span>
                                 </Link>
+                                <Link href="/densidad/simulador">
+                                    <span className="submenu-item">
+                                        <center>Simulador de Densidad</center>
+                                    </span>
+                                </Link>
                                 <Link
                                     href="/densidad/informe"
                                     className={`navbar-item ${
@@ -128,11 +133,6 @@ function Navbar() {
                                             </Link>
                                         </div>
                                     )}
-                                </Link>
-                                <Link href="/densidad/simulador">
-                                    <span className="submenu-item">
-                                        <center>Simulador de Densidad</center>
-                                    </span>
                                 </Link>
                             </div>
                         )}

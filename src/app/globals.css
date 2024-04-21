@@ -8,7 +8,7 @@ main{
 }
 .densidad{
   margin: 0 3rem 0 3rem;
-  width: 1200px;
+  width: 100%;
   
 }
 h1{
@@ -19,7 +19,13 @@ h2{
   text-align: center;
   padding-bottom: 1rem;
 }
-
+@media (max-width: 768px) {
+  .densidad{
+    margin: 0;
+    margin-left: 1rem;
+    margin-top: 2rem;
+  }
+}
 /*------------------------------------------------------barra de navegacion-------------------------------------------------*/
 .navbar {
   font-size:13px;
@@ -122,46 +128,140 @@ h2{
   margin-bottom: 1rem;
 }
 
-.submenu-item:hover {
+@media (max-width: 768px) {
+  /* Estilos para tabletas */
+  .navbar {
+      padding: 10px; /* Reduce el padding en tabletas */
+  }
+  .navbar-end{
+    padding: 0;
+    
+  }
+  .navbar-item {
+      margin-left: 1px; /* Reduce el margen izquierdo en tabletas */
+  }
+
+  .submenu {
+      top: 40%; /* Coloca el submenú más abajo en tabletas */
+      left: 10px; /* Ajusta la posición del submenú en tabletas */
+      width: calc(100% - 20px); /* Ancho del submenú en tabletas */
+      flex-direction: column; /* Cambia a orientación de columnas en tabletas */
+  }
+
+  .submenu-entrega {
+    top: calc(100% + 5px); /* Coloca el submenú entrega debajo del submenú principal en tabletas */
+    left: 0; /* Ajusta la posición del submenú entrega en tabletas */
+    width: 100%; /* Ancho del submenú entrega en tabletas */
+    padding: 5px 0; /* Agrega espacio interno al submenú entrega en tabletas */
+}
 }
 
-.navbar-item:hover .submenu {
-  
+@media (max-width: 480px) {
+  /* Estilos para dispositivos móviles */
+  .navbar {
+      padding: 5px;
+      padding-left: 0;
+      height: 120px; /* Reduce el padding en dispositivos móviles */
+  }
+
+  .navbar .fixed-top{
+    justify-content:left;
+    font-size: 11px;
+  }
+  .navbar-item {
+      margin-left: 3px; /* Reduce el margen izquierdo en dispositivos móviles */
+      padding: 0.5rem; /* Reduce el padding en dispositivos móviles */
+  }
+
+  .submenu {
+      top: 19%; /* Coloca el submenú más abajo en dispositivos móviles */
+      left: 103px; /* Ajusta la posición del submenú en dispositivos móviles */
+      width: calc(60% - 10px); /* Ancho del submenú en dispositivos móviles */
+      height: 90px;
+      padding: 5px;
+
+  }
+  .submenu-entrega {
+    width: calc(100%);
+    top: calc(80% + 5px); /* Coloca el submenú entrega debajo del submenú principal en dispositivos móviles */
+    left: 110; /* Ajusta la posición del submenú entrega en dispositivos móviles */
+    padding: 5px 0; /* Agrega espacio interno al submenú entrega en dispositivos móviles */
+    flex-direction: column;
 }
-
-
+}
 
 
 /*------------------------------------------------------pagina densidad introduccion -------------------------------------------------*/
 .video-introduccion{
-  width: 1200px;
+  width: 90%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction:row;
 }
 .video-introduccion-cuadro{
   padding-top: 2rem;
-  width: 550px; 
-  height: 309.9px;
+  width: 550px;
+  aspect-ratio: 16/9;
   padding-left: 3rem;
 
 }
 
+
 .densidad-inicio-descripcion{
   font-size: x-large;
   padding-top: 2rem;
-  width: 600px;
+  width: 100%;
   border-right: 2px solid black;
 }
 /*------------------------------------------------------pagina densidad -------------------------------------------------*/
 .densidad-video{
-  margin-left: 2rem;
-  width: 1100px;
-  height: 618.8px;
+  width: 90%;
+  aspect-ratio: 16/9;
+}
+
+/* Media queries para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+  /* Estilos para tabletas */
+  .laboratorio{
+    margin-top: 2rem;
+  }
+  .video-introduccion{
+    flex-direction: column;
+    margin: 0;
+  }
+  .video-introduccion-cuadro {
+      width: 90%; /* Ancho al 80% para tabletas */
+      padding-left: 0; /* Elimina el padding izquierdo en tabletas */
+      
+  }
+
+  .densidad-inicio-descripcion {
+      font-size: medium; /* Tamaño de fuente más pequeño para tabletas */
+      border-right: none; /* Elimina el borde derecho en tabletas */
+  }
+}
+
+@media (max-width: 480px) {
+
+  .video-introduccion{
+    flex-direction: column;
+    margin: 0;
+  }
+  /* Estilos para dispositivos móviles */
+  .video-introduccion-cuadro {
+      width: 100%; /* Ancho al 100% para dispositivos móviles */
+      padding-left: 0; /* Elimina el padding izquierdo en dispositivos móviles */
+      margin-bottom: 1rem; /* Agrega espacio inferior */
+  }
+
+  .densidad-inicio-descripcion {
+      font-size: small; /* Tamaño de fuente más pequeño para dispositivos móviles */
+      border-right: none; /* Elimina el borde derecho en dispositivos móviles */
+  }
 }
 /*------------------------------------------------------pagina ejercicios -------------------------------------------------*/
 .quiz-card{
-width: 500px;
+width: 420px;
 border: 2px solid #000; /* Borde de 2px de ancho, sólido y de color negro */
 border-radius: 10px; /* Bordes redondeados */
 padding: 20px; /* Espaciado interno */
@@ -178,13 +278,43 @@ height: 350px;
 .ejercicios-pregunta{
 display: flex;
 flex-wrap: wrap;
-justify-content: space-between;
+justify-content: space-around;
 }
 .ejercicio-descripcion{
   font-size: xx-large;
 }
 .question{
   font-size: 20px;
+}
+@media (max-width: 480px) {
+  .ejercicio-descripcion{
+    font-size: large;
+    padding: 1rem;
+  }
+  .quiz-card{
+    width: 90%;
+    padding: 5px;
+  }
+  .quiz-imagen{
+    width: 80%;
+    aspect-ratio: 4/3;
+    }
+
+  .quizInput{
+    padding-top: 10px;
+    width: 70%;
+  }
+  .quizInput input{
+    width: 150px;
+    margin-bottom: 5px;
+  }
+  .ejercicios-pregunta{
+    flex-direction: column;
+    padding-left: 10px;
+  }
+  .question{
+    padding-top: 5px;
+  }
 }
 /*------------------------------------------------------pagina informe -------------------------------------------------*/
 .laboratorio-introduccion{
@@ -199,22 +329,48 @@ justify-content: space-between;
 }
 .laboratorio-video iframe {
   width: 500px;
-  height: 300px;
+  aspect-ratio: 16/9;
   margin-right: 1rem;
   border-right: 2px;
 }
 
 .informe-descripcion{
   margin-top: 3rem;
+  width: 90%;
+}
+@media (max-width: 768px) {
+  /* Estilos para tabletas */
+  
+}
+
+@media (max-width: 480px) {
+  /* Estilos para dispositivos móviles */
+  .laboratorio-introduccion{
+    flex-direction: column;
+    font-size: medium;
+  }
+  .laboratorio-video{
+    padding: 0;
+    margin: 0;
+    
+  }
+  .laboratorio-video iframe{
+    width: 300px;
+    margin-top: 1rem;
+  }
+  .informe-descripcion{
+    margin-top: 1rem;
+  }
 }
 /*------------------------------------------------------pagina simulacion -------------------------------------------------*/
 .simulador-titulo{
   padding-bottom: 1rem;
 }
 
-.simulacion-densidad{
+.simulacion-densidad iframe{
+  aspect-ratio: 16/9;
   margin-left: 0;
-  width: 1200px;
+  width: 90%;
   margin-top: 2rem;
 }
 /* ------------------------------pagina informe 1----------------------*/
@@ -225,6 +381,7 @@ justify-content: space-between;
 .informe-texto{
   padding-bottom: 2rem;
   font-size:large;
+  width: 95%;
 }
 
 .table-container {
@@ -282,250 +439,40 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-
-/* normalizar css */
-Aquí tienes un ejemplo básico de cómo podrías normalizar tu CSS utilizando Normalize.css:
-
-```css
-/* normalize.css */
-
-/**
- * 1. Corrige el 'box sizing' en todos los elementos.
- * 2. Corrige el padding y el border sizing en Firefox.
- * 3. Corrige la altura inconsistente del <progress> en Firefox.
- * 4. Elimina los estilos del 'display' para los elementos ocultos.
- * 5. Corrige el 'cursor' para los botones y elementos que no son enlaces.
- * 6. Ajusta la opacidad en los elementos deshabilitados.
- * 7. Corrige el 'outline' inconsistente y poco claro en algunos navegadores.
- * 8. Establece la visibilidad como 'visible' para los elementos de tipo <template>.
- * 9. Corrige la propagación del estilo 'inherit' para <fieldset>.
- * 10. Corrige el tamaño y el 'baseline' de los elementos en los navegadores actuales.
- * 11. Corrige el estilo 'textarea' en Safari.
- * 12. Corrige la estabilidad visual de los pseudo-elementos después de ocultarlos en IE 11.
- * 13. Normaliza los estilos de listas.
- * 14. Hace que los elementos <hr> sean visibles en IE.
- * 15. Corrige las fuentes de tamaño anormal en Chrome y Safari.
- */
-
-/* Elementos estructurales */
-html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%; /* 1 */
+@media (max-width:480px) {
+  .informe1{
+    margin-top: 1rem;
+  }
+  .pregunta3{
+    flex-direction: column;
+  }
+}
+.tituloPregunta{
+  margin: 1rem;
+}
+.descripcionPregunta{
+  margin-bottom: 1rem;
+  font-size: large;
+}
+.pregunta2{
+  width: 93%;
+}
+.imagenSubida{
+  aspect-ratio: 16/9;
+  width: 90%;
+}
+.contenedorImagen{
+  display: flex;
+  flex-direction: column;
+}
+.imagenUpload{
+  width: 93%;
+}
+.pregunta3{
+  display: flex;
+  width: 90%;
 }
 
-body {
-  margin: 0;
+.pregunta3Imagen{
+  aspect-ratio: 16/9;
 }
-
-article,
-aside,
-footer,
-header,
-nav,
-section {
-  display: block;
-}
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-figcaption,
-figure,
-main { /* Ajuste de visualización para algunos elementos para garantizar que se muestren correctamente */
-  display: block;
-}
-
-/* Grupos de contenido */
-abbr[title] {
-  text-decoration: underline;
-  text-decoration: underline dotted;
-}
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-dfn {
-  font-style: italic;
-}
-
-/* Elementos de texto */
-a {
-  background-color: transparent;
-}
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-small {
-  font-size: 80%;
-}
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/* Elementos de tablas */
-caption {
-  caption-side: bottom;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-td,
-th {
-  padding: 0;
-}
-
-/* Evita los márgenes superiores e inferiores en los elementos de bloque */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-figure,
-hr,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Redefine la visualización para los elementos de estilo de contenido */
-ol,
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Ajuste del tamaño del contenido */
-pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/* Modificación del comportamiento del 'hr' */
-hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
-}
-
-/* Corrección del comportamiento de las imágenes en los navegadores antiguos */
-img {
-  border-style: none;
-}
-
-/* Reajuste del tamaño del 'input', 'select', 'textarea' */
-button,
-input,
-optgroup,
-select,
-textarea {
-  font: inherit; /* 1 */
-  margin: 0; /* 2 */
-}
-
-/* Restaurar el paso del punto al omitir el contenido de las listas numeradas */
-button,
-input { /* Reajustar 'input' se establece de manera similar */
-  overflow: visible;
-}
-
-/* Reajustar el estilo del elemento 'input' para Safari */
-button,
-input,
-select,
-textarea {
-  text-rendering: auto; /* 1 */
-  color: inherit; /* 2 */
-}
-
-/* Reajustar el estilo del elemento 'input' para Firefox */
-button {
-  appearance: button; /* 1 */
-  outline: none; /* 2 */
-}
-
-/* Corrección de la estabilidad de la fuente para Safari (OS X y iOS) */
-select {
-  text-transform: none;
-}
-
-/* Restablecer el estilo de la fuente para el elemento 'textarea' */
-textarea {
-  overflow: auto;
-}
-
-/* Edge no puede ocultar el estilo del botón en IE 11 */
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner,
-button::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-/* Restablecer la alineación del texto y la altura del botón */
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner,
-button::-moz-focus-inner {
-  text-align: center;
-  vertical-align: middle;
-}
-
-/* Alineación del borde y la línea del botón */
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner,
-button::-moz-focus-inner {
-  text-align: inherit;
-  border-color: inherit;
-  border-width: inherit;
-  border-style: inherit;
-  border-radius: inherit;
-}
-
-/* Botones y enlaces */
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button; /* 1 */
-}
-
-/* Enlaces personalizados */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Corrección del comportamiento del 'details' */
-details {
-  display: block;
-}
-

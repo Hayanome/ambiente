@@ -25,8 +25,6 @@ export default function Densidad() {
                 <div className="video-introduccion-cuadros">
                     <iframe
                         className="video-introduccion-cuadro"
-                        width="560"
-                        height="315"
                         src="https://www.youtube.com/embed/qVfeNhas6i0?si=zLD0-VoBTkcHNNuY"
                         title="YouTube video player"
                         frameborder="0"

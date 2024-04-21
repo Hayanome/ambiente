@@ -1,9 +1,6 @@
 import { Dosis, Inter } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
-import { dosis } from "./fonts";
-import Image from "next/image";
-import styles from "./page.module.css";
+import "./normalize.css";
 import Navbar from "./components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
